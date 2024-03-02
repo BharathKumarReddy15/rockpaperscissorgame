@@ -1,0 +1,44 @@
+body{
+   background-color: black;
+   color: white;
+   font-family: Arial, Helvetica, sans-serif;
+   text-align: center;
+}
+
+.playmove {
+   background-color: rgb(49, 46, 46);
+   border: 3px solid white;
+   border-radius: 50%;
+   padding: 28px 30px;
+   margin: 10px 20px;
+}
+.moveplay {
+   height: 50px;
+}
+.heading{
+   font-size: 30px;
+   margin: 15px 3px;
+   font-weight: bold;
+}
+.resetbutton{
+   background-color: white;
+   padding: 10px 15px;
+   font-size: 15px;
+   border: none;
+}
+.gamescore {
+   font-size: 20px;
+}
+.moveicon{
+   height: 70px;
+}
+.movetable{
+   display: flex;
+   justify-content: center;
+}
+th, td {
+   border:1px solid rgb(255, 255, 255);
+   height: 50px;
+   width: 150px;
+   padding: 10px 0px;
+ }
