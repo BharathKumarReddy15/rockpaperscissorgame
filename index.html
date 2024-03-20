@@ -8,33 +8,31 @@
     </head>
     <body>
         <p class="heading">Rock paper Scissors</p>
-        <button class="playmove" onclick="
-            playGame('rock');
-        ">
+        <button class="playmove js-rock">
             <img class="moveplay" src="./rock-emoji.png">
         </button>
-        <button class="playmove" onclick="
-            playGame('paper');
-        ">
+        <button class="playmove js-paper">
             <img class="moveplay" src="./paper-emoji.png">
         </button>
-        <button class="playmove" onclick="
-            playGame('scissor');
-        ">
+        <button class="playmove js-scissor">
             <img class="moveplay" src="./scissor-emoji.png">
         </button>
         <p class="gameresult"></p>
+        <p class="confirmation"></p>
         <p class="gamemoves">
             
         </p>
         <p class="gamescore"></p>
 
-        <button class="resetbutton" onclick="
-            reset();
-            updateScore();
-        ">
+        <button class="resetbutton">
             Reset Score
         </button>
+
+        <button class="autoplay">
+            Auto Play
+        </button>
+
+        
 
         <script src="rock-paper-scissor.js">
             
