@@ -21,6 +21,28 @@ function updateScore() {
 
 
 
+document.querySelector('.resetbutton').addEventListener('click', () => {
+    confirmationmessagepop();
+})
+
+const confirmationmessagepop = () => {
+    document.querySelector('.confirmation').innerHTML = `<div class="confirmpop">
+        <div class="popupconfirm">
+            <p class="confirmationmessage">Are you sure you want to reset the score?</p>
+            <button class="yes">Yes</button>
+            <button class="no">No</button>
+        </div>
+    </div>`
+    document.querySelector('.yes').addEventListener('click', () => {
+        document.querySelector('.confirmation').innerHTML = '';
+        reset();
+        updateScore();
+    })
+    document.querySelector('.no').addEventListener('click', () => {
+        document.querySelector('.confirmation').innerHTML = '';
+    })
+}
+
 function reset() {
    score = {
        wins : 0,
@@ -29,6 +51,57 @@ function reset() {
    }
    localStorage.removeItem('score');
 }
+
+
+let isautoplaying = false;
+let Id;
+//const autoPlay = () => {
+
+//};
+document.querySelector('.autoplay').addEventListener('click', () => {
+    autoPlay();
+})
+
+function autoPlay() {
+    if(!isautoplaying){
+        Id = setInterval(() => {
+            const playerMove = pickComputerMove();
+            playGame(playerMove);
+            document.querySelector('.autoplay').innerHTML = 'Stop Playing';
+        }, 1000);
+        isautoplaying = true;
+    } else {
+        isautoplaying = false;
+        document.querySelector('.autoplay').innerHTML = 'Auto Play';
+        clearInterval(Id);
+    }
+}
+
+document.querySelector('.js-rock').addEventListener("click",() => {
+    playGame('rock')
+});
+
+document.body.addEventListener('keydown', (event) => {
+    if(event.key === 'r'){
+        playGame('rock');
+    } else if (event.key === 'p') {
+        playGame('paper');
+    } else if (event.key === 's') {
+        playGame('scissor');
+    } else if (event.key === 'a') {
+        autoPlay();
+    } else if (event.key === 'Backspace') {
+        confirmationmessagepop();
+    }
+})
+
+document.querySelector('.js-paper').addEventListener("click",() => {
+    playGame('paper')
+});
+
+document.querySelector('.js-scissor').addEventListener("click",() => {
+    playGame('scissor')
+});
 
 function playGame(playerMove) {
    const computerMove = pickComputerMove();
