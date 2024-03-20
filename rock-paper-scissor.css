@@ -20,7 +20,7 @@ body{
    margin: 15px 3px;
    font-weight: bold;
 }
-.resetbutton{
+.resetbutton, .autoplay{
    background-color: white;
    padding: 10px 15px;
    font-size: 15px;
@@ -41,4 +41,25 @@ th, td {
    height: 50px;
    width: 150px;
    padding: 10px 0px;
- }
+}
+
+.yes, .no {
+   background-color: white;
+   font-size: 15px;
+   border: none;
+   padding: 7px 13px;
+}
+.popupconfirm {
+   background-color: rgb(54, 49, 49);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 15px;
+   padding: 3px 15px;
+   margin: 5px 150px;
+}
+.confirmpop {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
